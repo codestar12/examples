@@ -24,7 +24,7 @@ class FlashAttention(nn.Module):
                       runtime)
     """
 
-    def __init__(self, num_heads, softmax_scale=None, device=None, dtype=None):
+    def __init__(self, num_heads, softmax_scale=None, device=None, dtype=None, mup=False):
         # fail fast if triton is not available
         try:
             from flash_attn import flash_attn_triton  # type: ignore
@@ -38,6 +38,7 @@ class FlashAttention(nn.Module):
         super().__init__()
         self.num_heads = num_heads
         self.softmax_scale = softmax_scale
+        self.mup = mup
 
     def forward(
             self,
@@ -85,6 +86,10 @@ class FlashAttention(nn.Module):
             raise NotImplementedError(
                 f'assumes key_padding_mask is taken care of by attn_mask')
         qkv = rearrange(qkv, 'b s (t h d) -> b s t h d', t=3, h=self.num_heads)
+
+        if self.mup:
+            b, s, t, h, d = qkv.shape
+            self.softmax_scale = 1 / d
 
         attn_output = flash_attn_triton.flash_attn_qkvpacked_func(
             qkv, attn_mask, is_causal, self.softmax_scale)

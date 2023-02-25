@@ -19,6 +19,7 @@ from composer.metrics.nlp import LanguageCrossEntropy, Perplexity
 from composer.models.base import ComposerModel
 from einops import rearrange
 from omegaconf import DictConfig
+from mup import init
 
 
 class TorchCausalAttention(nn.Module):
@@ -102,7 +103,8 @@ class FlashCausalAttention(nn.Module):
                                    bias=True,
                                    device=device)
             self.causal_attn = FlashAttention(attention_dropout=cfg.attn_pdrop,
-                                              device=device)
+                                              device=device,
+                                              mup=cfg.get('mup'))
             self.out_proj = nn.Linear(self.d_model,
                                       self.d_model,
                                       bias=True,
@@ -351,11 +353,11 @@ class MosaicGPT(nn.Module):
         self.transformer.update(
             {'ln_f': nn.LayerNorm(cfg.d_model, device=cfg.init_device)})
 
-        if cfg.init_device != 'meta':
-            print(
-                f'You are using {cfg.init_device=}, but you can also use cfg.init_device="meta" with Composer + FSDP for fast initialization.'
-            )
-            self.apply(self.param_init_fn)
+        # if cfg.init_device != 'meta':
+        #     print(
+        #         f'You are using {cfg.init_device=}, but you can also use cfg.init_device="meta" with Composer + FSDP for fast initialization.'
+        #     )
+        #     self.apply(self.param_init_fn)
 
         # define attn mask
         self._attn_mask_initialized = False
@@ -494,7 +496,8 @@ class MosaicGPT(nn.Module):
 
     # Param Initialization, needed for device='meta' fast initialization
     def param_init_fn(self, module):
-        init_fn = partial(torch.nn.init.normal_,
+        print(module)
+        init_fn = partial(init.normal_,#torch.nn.init.normal_,
                           mean=0.0,
                           std=self.cfg.init_std)
         # Linear
@@ -504,9 +507,13 @@ class MosaicGPT(nn.Module):
                 torch.nn.init.zeros_(module.bias)
 
             if getattr(module, '_is_residual', False):
-                module.weight.data.normal_(
+                init.normal_(
+                    module.weight,
                     mean=0.0,
                     std=(self.cfg.init_std / math.sqrt(2 * self.cfg.n_layers)))
+                # module.weight.data.normal_(
+                #     mean=0.0,
+                #     std=(self.cfg.init_std / math.sqrt(2 * self.cfg.n_layers)))
 
         # Embedding
         if isinstance(module, nn.Embedding):
@@ -515,6 +522,7 @@ class MosaicGPT(nn.Module):
         # LayerNorm
         if isinstance(module, nn.LayerNorm):
             torch.nn.init.zeros_(module.bias)
+            # init.ones_(module.weight)
             torch.nn.init.ones_(module.weight)
 
         # torch's MultiheadAttention
@@ -540,9 +548,13 @@ class MosaicGPT(nn.Module):
 
             # out proj
             if module.out_proj._is_residual:
-                module.out_proj.weight.data.normal_(
+                init.normal_(
+                    module.out_proj.weight,
                     mean=0.0,
                     std=(self.cfg.init_std / math.sqrt(2 * self.cfg.n_layers)))
+                # module.out_proj.weight.data.normal_(
+                #     mean=0.0,
+                #     std=(self.cfg.init_std / math.sqrt(2 * self.cfg.n_layers)))
             else:
                 init_fn(module.out_proj.weight)
             if module.out_proj.bias is not None:

@@ -18,6 +18,8 @@ from examples.common.config_utils import log_config, update_batch_size_info
 from examples.llm.src.model_registry import COMPOSER_MODEL_REGISTRY
 from examples.llm.src.tokenizer import TOKENIZER_REGISTRY
 
+from mup import set_base_shapes
+
 
 def build_composer_model(cfg):
     warnings.filterwarnings(
@@ -67,6 +69,8 @@ def main(cfg):
     # Build Model
     print('Initializing model...')
     model = build_composer_model(cfg.model)
+    set_base_shapes(model, cfg.get('bsh_pth'))
+    model.apply(model.model.param_init_fn)
     cfg.n_params = sum(p.numel() for p in model.parameters())
     print(f'{cfg.n_params=:.2e}')
     if hasattr(model, 'num_fwd_flops'):

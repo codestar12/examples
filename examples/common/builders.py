@@ -16,6 +16,7 @@ from composer.optim.scheduler import (ConstantWithWarmupScheduler,
 
 from examples.common.speed_monitor_w_mfu import SpeedMonitorMFU
 from examples.common.text_data import build_text_dataloader
+from mup import optim
 
 
 def build_callback(name, kwargs):
@@ -63,6 +64,15 @@ def build_optimizer(cfg, model):
                               betas=cfg.betas,
                               eps=cfg.eps,
                               weight_decay=cfg.weight_decay)
+    elif cfg.name == 'mup_decoupled_adamw':
+        optim.MuAdam(
+            model.parameters(),
+            impl=DecoupledAdamW,
+            decoupled_wd=True,
+            lr=cfg.lr,
+            betas=cfg.betas,
+            eps=cfg.eps,
+            weight_decay=cfg.weight_decay)
     else:
         raise ValueError(f'Not sure how to build optimizer: {cfg.name}')
 

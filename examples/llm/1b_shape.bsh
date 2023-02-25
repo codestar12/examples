@@ -1,0 +1,685 @@
+# This is a base shape file encoded in yaml
+# - `null` indicates a dimension is "finite", i.e. a non-"width" dimension
+# - a number indicates the base dimension of an "infinite" dimension, i.e. some notion of "width"
+model.transformer.blocks.0.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.0.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.0.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.0.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.0.ln_1.bias:
+- 2048
+model.transformer.blocks.0.ln_1.weight:
+- 2048
+model.transformer.blocks.0.ln_2.bias:
+- 2048
+model.transformer.blocks.0.ln_2.weight:
+- 2048
+model.transformer.blocks.0.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.0.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.0.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.0.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.1.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.1.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.1.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.1.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.1.ln_1.bias:
+- 2048
+model.transformer.blocks.1.ln_1.weight:
+- 2048
+model.transformer.blocks.1.ln_2.bias:
+- 2048
+model.transformer.blocks.1.ln_2.weight:
+- 2048
+model.transformer.blocks.1.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.1.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.1.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.1.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.10.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.10.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.10.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.10.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.10.ln_1.bias:
+- 2048
+model.transformer.blocks.10.ln_1.weight:
+- 2048
+model.transformer.blocks.10.ln_2.bias:
+- 2048
+model.transformer.blocks.10.ln_2.weight:
+- 2048
+model.transformer.blocks.10.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.10.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.10.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.10.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.11.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.11.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.11.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.11.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.11.ln_1.bias:
+- 2048
+model.transformer.blocks.11.ln_1.weight:
+- 2048
+model.transformer.blocks.11.ln_2.bias:
+- 2048
+model.transformer.blocks.11.ln_2.weight:
+- 2048
+model.transformer.blocks.11.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.11.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.11.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.11.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.12.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.12.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.12.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.12.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.12.ln_1.bias:
+- 2048
+model.transformer.blocks.12.ln_1.weight:
+- 2048
+model.transformer.blocks.12.ln_2.bias:
+- 2048
+model.transformer.blocks.12.ln_2.weight:
+- 2048
+model.transformer.blocks.12.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.12.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.12.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.12.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.13.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.13.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.13.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.13.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.13.ln_1.bias:
+- 2048
+model.transformer.blocks.13.ln_1.weight:
+- 2048
+model.transformer.blocks.13.ln_2.bias:
+- 2048
+model.transformer.blocks.13.ln_2.weight:
+- 2048
+model.transformer.blocks.13.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.13.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.13.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.13.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.14.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.14.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.14.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.14.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.14.ln_1.bias:
+- 2048
+model.transformer.blocks.14.ln_1.weight:
+- 2048
+model.transformer.blocks.14.ln_2.bias:
+- 2048
+model.transformer.blocks.14.ln_2.weight:
+- 2048
+model.transformer.blocks.14.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.14.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.14.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.14.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.15.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.15.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.15.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.15.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.15.ln_1.bias:
+- 2048
+model.transformer.blocks.15.ln_1.weight:
+- 2048
+model.transformer.blocks.15.ln_2.bias:
+- 2048
+model.transformer.blocks.15.ln_2.weight:
+- 2048
+model.transformer.blocks.15.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.15.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.15.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.15.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.16.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.16.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.16.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.16.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.16.ln_1.bias:
+- 2048
+model.transformer.blocks.16.ln_1.weight:
+- 2048
+model.transformer.blocks.16.ln_2.bias:
+- 2048
+model.transformer.blocks.16.ln_2.weight:
+- 2048
+model.transformer.blocks.16.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.16.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.16.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.16.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.17.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.17.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.17.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.17.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.17.ln_1.bias:
+- 2048
+model.transformer.blocks.17.ln_1.weight:
+- 2048
+model.transformer.blocks.17.ln_2.bias:
+- 2048
+model.transformer.blocks.17.ln_2.weight:
+- 2048
+model.transformer.blocks.17.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.17.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.17.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.17.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.18.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.18.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.18.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.18.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.18.ln_1.bias:
+- 2048
+model.transformer.blocks.18.ln_1.weight:
+- 2048
+model.transformer.blocks.18.ln_2.bias:
+- 2048
+model.transformer.blocks.18.ln_2.weight:
+- 2048
+model.transformer.blocks.18.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.18.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.18.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.18.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.19.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.19.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.19.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.19.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.19.ln_1.bias:
+- 2048
+model.transformer.blocks.19.ln_1.weight:
+- 2048
+model.transformer.blocks.19.ln_2.bias:
+- 2048
+model.transformer.blocks.19.ln_2.weight:
+- 2048
+model.transformer.blocks.19.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.19.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.19.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.19.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.2.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.2.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.2.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.2.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.2.ln_1.bias:
+- 2048
+model.transformer.blocks.2.ln_1.weight:
+- 2048
+model.transformer.blocks.2.ln_2.bias:
+- 2048
+model.transformer.blocks.2.ln_2.weight:
+- 2048
+model.transformer.blocks.2.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.2.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.2.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.2.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.20.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.20.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.20.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.20.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.20.ln_1.bias:
+- 2048
+model.transformer.blocks.20.ln_1.weight:
+- 2048
+model.transformer.blocks.20.ln_2.bias:
+- 2048
+model.transformer.blocks.20.ln_2.weight:
+- 2048
+model.transformer.blocks.20.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.20.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.20.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.20.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.21.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.21.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.21.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.21.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.21.ln_1.bias:
+- 2048
+model.transformer.blocks.21.ln_1.weight:
+- 2048
+model.transformer.blocks.21.ln_2.bias:
+- 2048
+model.transformer.blocks.21.ln_2.weight:
+- 2048
+model.transformer.blocks.21.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.21.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.21.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.21.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.22.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.22.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.22.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.22.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.22.ln_1.bias:
+- 2048
+model.transformer.blocks.22.ln_1.weight:
+- 2048
+model.transformer.blocks.22.ln_2.bias:
+- 2048
+model.transformer.blocks.22.ln_2.weight:
+- 2048
+model.transformer.blocks.22.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.22.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.22.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.22.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.23.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.23.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.23.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.23.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.23.ln_1.bias:
+- 2048
+model.transformer.blocks.23.ln_1.weight:
+- 2048
+model.transformer.blocks.23.ln_2.bias:
+- 2048
+model.transformer.blocks.23.ln_2.weight:
+- 2048
+model.transformer.blocks.23.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.23.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.23.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.23.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.3.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.3.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.3.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.3.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.3.ln_1.bias:
+- 2048
+model.transformer.blocks.3.ln_1.weight:
+- 2048
+model.transformer.blocks.3.ln_2.bias:
+- 2048
+model.transformer.blocks.3.ln_2.weight:
+- 2048
+model.transformer.blocks.3.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.3.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.3.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.3.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.4.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.4.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.4.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.4.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.4.ln_1.bias:
+- 2048
+model.transformer.blocks.4.ln_1.weight:
+- 2048
+model.transformer.blocks.4.ln_2.bias:
+- 2048
+model.transformer.blocks.4.ln_2.weight:
+- 2048
+model.transformer.blocks.4.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.4.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.4.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.4.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.5.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.5.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.5.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.5.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.5.ln_1.bias:
+- 2048
+model.transformer.blocks.5.ln_1.weight:
+- 2048
+model.transformer.blocks.5.ln_2.bias:
+- 2048
+model.transformer.blocks.5.ln_2.weight:
+- 2048
+model.transformer.blocks.5.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.5.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.5.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.5.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.6.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.6.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.6.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.6.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.6.ln_1.bias:
+- 2048
+model.transformer.blocks.6.ln_1.weight:
+- 2048
+model.transformer.blocks.6.ln_2.bias:
+- 2048
+model.transformer.blocks.6.ln_2.weight:
+- 2048
+model.transformer.blocks.6.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.6.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.6.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.6.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.7.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.7.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.7.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.7.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.7.ln_1.bias:
+- 2048
+model.transformer.blocks.7.ln_1.weight:
+- 2048
+model.transformer.blocks.7.ln_2.bias:
+- 2048
+model.transformer.blocks.7.ln_2.weight:
+- 2048
+model.transformer.blocks.7.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.7.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.7.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.7.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.8.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.8.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.8.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.8.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.8.ln_1.bias:
+- 2048
+model.transformer.blocks.8.ln_1.weight:
+- 2048
+model.transformer.blocks.8.ln_2.bias:
+- 2048
+model.transformer.blocks.8.ln_2.weight:
+- 2048
+model.transformer.blocks.8.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.8.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.8.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.8.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.blocks.9.causal_attn.mhsa.Wqkv.bias:
+- 6144
+model.transformer.blocks.9.causal_attn.mhsa.Wqkv.weight:
+- 6144
+- 2048
+model.transformer.blocks.9.causal_attn.mhsa.out_proj.bias:
+- 2048
+model.transformer.blocks.9.causal_attn.mhsa.out_proj.weight:
+- 2048
+- 2048
+model.transformer.blocks.9.ln_1.bias:
+- 2048
+model.transformer.blocks.9.ln_1.weight:
+- 2048
+model.transformer.blocks.9.ln_2.bias:
+- 2048
+model.transformer.blocks.9.ln_2.weight:
+- 2048
+model.transformer.blocks.9.mlp.mlp_down.bias:
+- 2048
+model.transformer.blocks.9.mlp.mlp_down.weight:
+- 2048
+- 8192
+model.transformer.blocks.9.mlp.mlp_up.bias:
+- 8192
+model.transformer.blocks.9.mlp.mlp_up.weight:
+- 8192
+- 2048
+model.transformer.ln_f.bias:
+- 2048
+model.transformer.ln_f.weight:
+- 2048
+model.transformer.wpe.weight:
+- null
+- 2048
+model.transformer.wte.weight:
+- null
+- 2048

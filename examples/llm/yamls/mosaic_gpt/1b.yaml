@@ -10,7 +10,7 @@ run_name: # If left blank, will be read from env var $COMPOSER_RUN_NAME
 # Model
 model:
   name: mosaic_gpt
-  init_device: meta
+  init_device: cpu
   tokenizer_name: ${tokenizer_name}
   d_model: 2048
   n_heads: 16 # Modified 24->16 so that d_head == 128 to statisfy FlashAttention
@@ -22,7 +22,9 @@ model:
   attn_pdrop: 0.0
   resid_pdrop: 0.0
   emb_pdrop: 0.0
-  attn_impl: flash
+  attn_impl: triton
+  mup: true
+  #attn_qk_ln: true
 
 # Tokenizer
 tokenizer:
@@ -65,7 +67,7 @@ scheduler:
   alpha_f: 0.1
 
 optimizer:
-  name: decoupled_adamw
+  name: mup_decoupled_adamw
   lr: 2.0e-4
   betas:
   - 0.9
@@ -90,13 +92,13 @@ device_train_microbatch_size: 4
 # device_train_microbatch_size: auto
 precision: amp_bf16
 
-# FSDP
-fsdp_config:
-  sharding_strategy: FULL_SHARD
-  mixed_precision: DEFAULT
-  activation_checkpointing: false
-  activation_cpu_offload: false
-  verbose: false
+# # FSDP
+# fsdp_config:
+#   sharding_strategy: FULL_SHARD
+#   mixed_precision: DEFAULT
+#   activation_checkpointing: false
+#   activation_cpu_offload: false
+#   verbose: false
 
 # Logging
 progress_bar: false
