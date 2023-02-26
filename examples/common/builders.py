@@ -65,7 +65,7 @@ def build_optimizer(cfg, model):
                               eps=cfg.eps,
                               weight_decay=cfg.weight_decay)
     elif cfg.name == 'mup_decoupled_adamw':
-        optim.MuAdam(
+        return optim.MuAdam(
             model.parameters(),
             impl=DecoupledAdamW,
             decoupled_wd=True,
