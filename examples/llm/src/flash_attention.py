@@ -107,12 +107,14 @@ class FlashMHA(nn.Module):
                  causal=False,
                  device=None,
                  dtype=None,
+                 mup=False,
                  **kwargs) -> None:
         assert batch_first
         factory_kwargs = {'device': device, 'dtype': dtype}
         super().__init__()
         self.embed_dim = embed_dim
         self.causal = causal
+        self.mup = mup
 
         self.num_heads = num_heads
         assert self.embed_dim % num_heads == 0, 'self.kdim must be divisible by num_heads'
@@ -125,6 +127,7 @@ class FlashMHA(nn.Module):
                               **factory_kwargs)
         self.inner_attn = FlashAttention(num_heads=num_heads,
                                          softmax_scale=None,
+                                         mup=self.mup
                                          **factory_kwargs)
         self.out_proj = nn.Linear(embed_dim,
                                   embed_dim,

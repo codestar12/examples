@@ -188,6 +188,7 @@ class TritonFlashCausalAttention(nn.Module):
             bias=True,
             batch_first=True,
             causal=True,
+            mup=cfg.mup,
             device=device,
         )
         self.mhsa.out_proj._is_residual = True  # type: ignore
@@ -517,7 +518,11 @@ class MosaicGPT(nn.Module):
 
         # Embedding
         if isinstance(module, nn.Embedding):
-            init_fn(module.weight)
+            init_fun(module.weight)
+            # torch.nn.init.normal_(
+            #     module.weight,
+            #     mean=0,
+            #     std=self.cfg.init_std)
 
         # LayerNorm
         if isinstance(module, nn.LayerNorm):
@@ -534,6 +539,7 @@ class MosaicGPT(nn.Module):
             else:
                 assert module.q_proj_weight is not None and module.k_proj_weight is not None and module.v_proj_weight is not None
                 assert module.in_proj_weight is None
+                #torch.nn.init.zeros_(module.q_proj_weight)
                 init_fn(module.q_proj_weight)
                 init_fn(module.k_proj_weight)
                 init_fn(module.v_proj_weight)
