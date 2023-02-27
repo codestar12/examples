@@ -127,7 +127,7 @@ class FlashMHA(nn.Module):
                               **factory_kwargs)
         self.inner_attn = FlashAttention(num_heads=num_heads,
                                          softmax_scale=None,
-                                         mup=self.mup
+                                         mup=self.mup,
                                          **factory_kwargs)
         self.out_proj = nn.Linear(embed_dim,
                                   embed_dim,
