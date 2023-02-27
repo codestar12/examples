@@ -518,7 +518,7 @@ class MosaicGPT(nn.Module):
 
         # Embedding
         if isinstance(module, nn.Embedding):
-            init_fun(module.weight)
+            init_fn(module.weight)
             # torch.nn.init.normal_(
             #     module.weight,
             #     mean=0,
