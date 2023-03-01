@@ -96,15 +96,20 @@ class FlashCausalAttention(nn.Module):
         self.attn_qk_ln = cfg.get('attn_qk_ln')
         self.d_model = cfg.d_model
         self.n_heads = cfg.n_heads
+        self.mup = cfg.get('mup')
 
         if self.attn_qk_ln:
             self.W_qkv = nn.Linear(self.d_model,
                                    3 * self.d_model,
                                    bias=True,
                                    device=device)
-            self.causal_attn = FlashAttention(attention_dropout=cfg.attn_pdrop,
-                                              device=device,
-                                              mup=cfg.get('mup'))
+            if cfg.get('mup'):
+                self.causal_attn = FlashAttention(attention_dropout=cfg.attn_pdrop,
+                                                softmax_scale=1/(self.d_model / self.n_heads),
+                                                device=device,)
+            else:
+                self.causal_attn = FlashAttention(attention_dropout=cfg.attn_pdrop,
+                                                device=device,)
             self.out_proj = nn.Linear(self.d_model,
                                       self.d_model,
                                       bias=True,
@@ -320,6 +325,7 @@ class MosaicGPT(nn.Module):
                 'LayerNorm over queries and keys in attention is only implemented with flash attention.'
             )
 
+        self.mup = cfg.get('mup', False)
         self.alibi = cfg.get('alibi', False)
         self.alibi_bias_max = cfg.get('alibi_bias_max',
                                       8 if self.alibi else None)
@@ -498,9 +504,15 @@ class MosaicGPT(nn.Module):
     # Param Initialization, needed for device='meta' fast initialization
     def param_init_fn(self, module):
         print(module)
-        init_fn = partial(init.normal_,#torch.nn.init.normal_,
-                          mean=0.0,
-                          std=self.cfg.init_std)
+
+        if self.mup:
+            init_fn = partial(init.normal_,#torch.nn.init.normal_,
+                            mean=0.0,
+                            std=self.cfg.init_std)
+        else:
+            init_fn = partial(torch.nn.init.normal_,
+                            mean=0.0,
+                            std=self.cfg.init_std)
         # Linear
         if isinstance(module, nn.Linear):
             init_fn(module.weight)
