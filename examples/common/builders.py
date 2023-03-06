@@ -18,7 +18,6 @@ from composer.optim.scheduler import (ConstantWithWarmupScheduler,
 
 from examples.common.optim import DecoupledLionW
 
-from examples.common.speed_monitor_w_mfu import SpeedMonitorMFU
 from examples.common.text_data import build_text_dataloader
 
 
