@@ -227,12 +227,10 @@ def main(args: Namespace) -> None:
     tokenizer.model_max_length = int(1e30)
     columns = {'tokens': 'bytes'}
 
-    for split_name in args.splits:
-
+    if args.splits is None:
         dataset = ConcatTokensDatasetStreaming(
             local=args.local,
             remote=args.remote,
-            split=split_name,
             max_length=args.concat_tokens,
             tokenizer=tokenizer,
             eos_text=args.eos_text,
@@ -247,12 +245,39 @@ def main(args: Namespace) -> None:
 
 
         # Write samples
-        print(f'Converting {split_name} to MDS format...')
-        with MDSWriter(dirname=os.path.join(args.out_root, split_name),
+        print(f'Converting to MDS format...')
+        with MDSWriter(dirname=args.out_root,
                        columns=columns,
                        compression=args.compression) as out:
-            for sample in tqdm(samples, desc=split_name, total=ds_len):
+            for sample in tqdm(samples, total=ds_len):
                 out.write(sample)
+    else:
+        for split_name in args.splits:
+
+            dataset = ConcatTokensDatasetStreaming(
+                local=args.local,
+                remote=args.remote,
+                split=split_name,
+                max_length=args.concat_tokens,
+                tokenizer=tokenizer,
+                eos_text=args.eos_text,
+                bos_text=args.bos_text,
+                no_wrap=args.no_wrap,
+            )
+            # Get samples
+
+            ds_len = len(dataset)
+            loader = build_dataloader(dataset=dataset, batch_size=512)
+            samples = generate_samples(loader)
+
+
+            # Write samples
+            print(f'Converting {split_name} to MDS format...')
+            with MDSWriter(dirname=os.path.join(args.out_root, split_name),
+                        columns=columns,
+                        compression=args.compression) as out:
+                for sample in tqdm(samples, desc=split_name, total=ds_len):
+                    out.write(sample)
 
 
 if __name__ == '__main__':
