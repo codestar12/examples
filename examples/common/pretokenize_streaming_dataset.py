@@ -30,7 +30,7 @@ def parse_args() -> Namespace:
     parser.add_argument('--remote', type=str, required=False, default=None)
     parser.add_argument('--splits',
                         nargs='+',
-                        default=['train', 'val'])
+                        default=None)
     parser.add_argument('--out_root', type=str, required=True)
     parser.add_argument('--compression', type=str, default=None)
 
