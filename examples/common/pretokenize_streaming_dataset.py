@@ -249,7 +249,7 @@ def main(args: Namespace) -> None:
         print(f'Converting to MDS format...')
         with MDSWriter(out=args.out_root,
                        max_workers=8,
-                       progress_bar=False,
+                       progress_bar=True,
                        columns=columns,
                        compression=args.compression) as out:
             for sample in tqdm(samples, total=ds_len):
