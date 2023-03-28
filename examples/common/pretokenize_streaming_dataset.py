@@ -231,6 +231,7 @@ def main(args: Namespace) -> None:
         dataset = ConcatTokensDatasetStreaming(
             local=args.local,
             remote=args.remote,
+            split=None,
             max_length=args.concat_tokens,
             tokenizer=tokenizer,
             eos_text=args.eos_text,
