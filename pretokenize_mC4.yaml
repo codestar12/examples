@@ -1,0 +1,18 @@
+integrations:
+  - integration_type: git_repo
+    git_repo: codestar12/examples
+    git_branch: streaming_concat
+    pip_install: -e .[llm]
+
+command: |
+  cd examples/examples/
+  python common/pretokenize_streaming_dataset.py --out_root oci://mosaicml-internal-dataset-mc4/mds/pretokenized/en/ \
+  --local /tmp/mds-cache/ --remote oci://mosaicml-internal-dataset-mc4/mds/en/ \
+  --concat_tokens 2048 --tokenizer gpt2 --eos_text '<|endoftext|>'
+
+
+run_name: test_mC4
+gpu_num: 8
+cluster: r12z1
+image: mosaicml/pytorch:1.13.1_cu117-python3.10-ubuntu20.04
+optimization_level: 0
